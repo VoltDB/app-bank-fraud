@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<deployment>
+  <cluster hostcount="1" sitesperhost="2" kfactor="0" />
+  <httpd enabled="true">
+    <jsonapi enabled="true" />
+  </httpd>
+  <export enabled="true" target="http">
+    <configuration>
+      <property name="endpoint">
+        http://myhadoopsvr/webhdfs/v1.0/%t/data%p.%t.csv
+      </property>
+      <property name="batch.mode">true</property>
+      <property name="period">120</property>
+    </configuration>
+  </export>
+</deployment>
