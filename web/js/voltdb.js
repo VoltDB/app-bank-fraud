@@ -1,6 +1,6 @@
 /*
  This file is part of VoltDB.
- Copyright (C) 2008-2013 VoltDB Inc.
+ Copyright (C) 2008-2014 VoltDB Inc.
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU Affero General Public License as
@@ -397,8 +397,7 @@ var IVoltDB = (function(){
     this.TestConnection = function(server, port, admin, user, password, isHashedPassword, onConnectionTested)
     {
         var conn = new Connection(server, port, admin, user, password, isHashedPassword);
-        var timeout = setTimeout(function() {onConnectionTested(false);}, 5000);
-        conn.BeginExecute('@Statistics', ['TABLE',0], function(response) { try { if (response.status == 1) {clearTimeout(timeout); onConnectionTested(true); } else onConnectionTested(false);} catch(x) {clearTimeout(timeout); onConnectionTested(true);} });
+        conn.BeginExecute('@Statistics', ['TABLE',0], function(response) { try { if (response.status == 1) {onConnectionTested(true); } else onConnectionTested(false);} catch(x) {onConnectionTested(true);} });
     }
     this.AddConnection = function(server, port, admin, user, password, isHashedPassword, onConnectionAdded)
     {
