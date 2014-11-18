@@ -81,7 +81,7 @@ function SetRefreshInterval(interval) {
 }
 
 $(document).ready(function(){
-    con = VoltDB.AddConnection('localhost', 8080, false, null, null, false, (function(connection, success){}));
+    con = VoltDB.AddConnection(location.hostname, 8080, false, null, null, false, (function(connection, success){}));
     SetRefreshInterval(1);
 
     // $('#table_ad_sum > tbody > tr').click(function() {
