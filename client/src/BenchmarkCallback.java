@@ -1,5 +1,5 @@
 /* This file is part of VoltDB.
- * Copyright (C) 2008-2014 VoltDB Inc.
+ * Copyright (C) 2008-2015 VoltDB Inc.
  */
 package client;
 
@@ -31,7 +31,7 @@ public class BenchmarkCallback implements ProcedureCallback {
 	}
     }
 
-    public BenchmarkCallback(String procedure, long maxErrors) { 
+    public BenchmarkCallback(String procedure, long maxErrors) {
         super();
         this.procedureName = procedure;
         this.maxErrors = maxErrors;
